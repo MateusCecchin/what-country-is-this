@@ -3,6 +3,7 @@ import { Screen } from "../components/Screen";
 import { BackButton } from "../components/BackButton";
 import { useCountries } from "../contexts/countries";
 import { useEffect } from "react";
+import Image from "next/image";
 
 export default function Name() {
     const router = useRouter();
@@ -23,7 +24,7 @@ export default function Name() {
                 <BackButton/>
                 <div className="flex flex-1 gap-6 mt-6 flex-col lg:flex-row ">
                 <div className="flex lg:flex-1 justify-end items-center">
-            <img src={countrie.flags.svg} className="flex lg:w-[500px] lg:h-[300px]"></img>
+            <Image src={countrie.flags.svg} className="flex lg:w-[500px] lg:h-[300px]" alt=""></Image>
                 </div>
                 <div className="flex lg:flex-1 flex-col justify-center items-center lg:items-start gap-4">
                     <h1 className="text-5xl mb-4 text-center">{countrie.name.common || "Not found"}</h1>
