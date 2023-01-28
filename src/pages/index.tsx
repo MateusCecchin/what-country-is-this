@@ -49,8 +49,8 @@ console.log(countries)
         </form>
       </div>
         <CountriesCard.Group>
-      {!!countries.map ? countries.map(c => 
-      <Link href={`/${c.name.common}` || "#"}  onClick={() => setCountrie(c)}>
+      {!!countries.map ? countries.map((c, i) => 
+      <Link key={i} href={`/${c.name.common}` || "#"}  onClick={() => setCountrie(c)}>
       <CountriesCard.Root>
           <CountriesCard.Image img={c.flags.svg}/>
           <CountriesCard.Info name={c.name.common} region={c.region} capital={c.capital} population={c.population}/>

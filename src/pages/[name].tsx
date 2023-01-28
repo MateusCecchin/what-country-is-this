@@ -15,7 +15,7 @@ export default function Name() {
         if (!countrie.area) {
             router.push("/")
         }
-    }, [])
+    }, [countrie.area, router])
 
     if (!countrie.area) return <></> 
 
