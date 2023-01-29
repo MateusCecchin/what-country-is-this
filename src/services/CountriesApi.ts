@@ -72,13 +72,9 @@ interface ILatLng {
 }
 
 async function fetchCountryInfo(country: string) {
-  try {
     const response = await fetch(`https://restcountries.com/v3.1/${country}`);
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.log(error);
-  }
+    return response;
+  
 }
 
 export default { fetchCountryInfo };

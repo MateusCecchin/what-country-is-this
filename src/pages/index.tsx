@@ -6,6 +6,8 @@ import { useCountries } from "../contexts/countries";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 import CountriesApi, { Countries } from "../services/CountriesApi";
 import { Loading } from "../components/Loading";
+import { toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 
 export default function Home() {
   const [countries, setCountries] = useState<Countries[]>();
@@ -16,9 +18,9 @@ export default function Home() {
   async function fetchCountryInfo(countrie: string) {
     try {
       const response = await CountriesApi.fetchCountryInfo(countrie);
-      setCountries(response);
+      setCountries(await response.json());
     } catch (error) {
-      console.log(error);
+      toast("Countrie not found", { autoClose: 5000, type: "error" });
     }
   }
 
@@ -37,6 +39,7 @@ export default function Home() {
 
   return (
     <Screen>
+      <ToastContainer theme="dark" />
       <form onSubmit={handleSubmit} className="mb-14">
         <TextInput
           name="search"
