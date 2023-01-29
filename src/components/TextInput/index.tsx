@@ -17,11 +17,15 @@ function Input({ ...rest }: HTMLAttributes<HTMLInputElement>) {
   return <input className="bg-transparent w-full outline-none" {...rest} />;
 }
 
-function TextInputComponent({ name, iconLeft: IconLeft, ...rest }: TextInputProps) {
+function TextInputComponent({
+  name,
+  iconLeft: IconLeft,
+  ...rest
+}: TextInputProps) {
   return (
     <label htmlFor={name}>
       <TextInput.Root>
-        {IconLeft && <IconLeft className="h-6 w-6"/>}
+        {IconLeft && <IconLeft className="h-6 w-6" />}
         <TextInput.Input id={name} {...rest} />
       </TextInput.Root>
     </label>
