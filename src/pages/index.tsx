@@ -12,7 +12,6 @@ import { ToastContainer } from "react-toastify";
 export default function Home() {
   const [countries, setCountries] = useState<Countries[]>();
   const [countriesSearch, setCountriesSearch] = useState(undefined);
-  const [searchValue, setSearchValue] = useState();
   const { setCountrie } = useCountries();
 
   async function fetchCountryInfo(countrie: string) {
@@ -24,8 +23,9 @@ export default function Home() {
     }
   }
 
-  function handleSubmit(e: any) {
+  function handleSubmit(e) {
     e.preventDefault();
+    const searchValue = e.target.elements.search.value
     setCountriesSearch(searchValue);
   }
 
@@ -45,7 +45,6 @@ export default function Home() {
           name="search"
           iconLeft={MagnifyingGlassIcon}
           placeholder="Made by: Mateus Cecchin"
-          onChange={(event: any) => setSearchValue(event?.target.value)}
         />
       </form>
       {countries ? (
