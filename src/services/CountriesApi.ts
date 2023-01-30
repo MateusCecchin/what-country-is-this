@@ -1,3 +1,5 @@
+import { toast } from "react-toastify";
+
 export interface Countries {
   altSpellings: string[];
   area: number;
@@ -72,9 +74,16 @@ interface ILatLng {
 }
 
 async function fetchCountryInfo(country: string) {
+  try {
     const response = await fetch(`https://restcountries.com/v3.1/${country}`);
-    return response.json();
-  
+    if (response.status == 404) {
+      toast("Countrie not found", { autoClose: 5000, type: "error" });
+    } else {
+      return response.json();
+    }
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 export default { fetchCountryInfo };
