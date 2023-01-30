@@ -26,9 +26,6 @@ export default function Home() {
     setCountriesSearch(searchValue);
   }
 
-  
-
-
   return (
     <Screen>
       <ToastContainer theme="dark" />
