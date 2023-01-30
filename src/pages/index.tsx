@@ -17,9 +17,13 @@ export default function Home() {
   async function fetchCountryInfo(countrie: string) {
     try {
       const response = await CountriesApi.fetchCountryInfo(countrie);
-      setCountries(await response.json());
+      if (response.status == "404") {
+        toast("Countrie not found", { autoClose: 5000, type: "error" });
+      }else {
+        setCountries(response);
+      }
     } catch (error) {
-      toast("Countrie not found", { autoClose: 5000, type: "error" });
+      toast(error, { autoClose: 5000, type: "error" });
     }
   }
 
@@ -64,7 +68,7 @@ interface CountrieCardsProps {
 function CountrieCards({ countries, onCountrie }: CountrieCardsProps) {
   return (
     <Card.Group>
-      {countries.map((c, i) => (
+      {countries.map && countries.map((c, i) => (
         <Card.Root
           key={i}
           href={`/${c.name.common}` || "#"}

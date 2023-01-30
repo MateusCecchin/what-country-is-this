@@ -73,7 +73,7 @@ interface ILatLng {
 
 async function fetchCountryInfo(country: string) {
     const response = await fetch(`https://restcountries.com/v3.1/${country}`);
-    return response;
+    return response.json();
   
 }
 
