@@ -28,7 +28,6 @@ export default function Home() {
 
   return (
     <Screen>
-      <ToastContainer theme="dark" />
       <form onSubmit={handleSubmit} className="mb-14">
         <TextInput
           name="search"
@@ -39,7 +38,7 @@ export default function Home() {
       {data ? (
         <CountrieCards countries={data} onCountrie={setCountrie} />
       ) : (
-        <Loading/>
+        <Loading />
       )}
     </Screen>
   );

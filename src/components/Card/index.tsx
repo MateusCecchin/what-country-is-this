@@ -16,7 +16,7 @@ interface InfoProps {
 function Root({ children, ...rest }: RootProps) {
   return (
     <Link
-      className="sm:min-w-[300px] sm:min-h-[400px] max-w-[300px] max-h-[400px] bg-slate-700 rounded-lg shadow-2xl hover:bg-slate-600 hover:cursor-pointer"
+      className="sm:min-w-[300px] sm:min-h-[400px] max-w-[300px] max-h-[400px] mx-auto bg-slate-700 rounded-lg shadow-2xl hover:bg-slate-600 hover:cursor-pointer"
       {...rest}
     >
       {children}
@@ -26,8 +26,8 @@ function Root({ children, ...rest }: RootProps) {
 
 function ImageComponent({ img }: any) {
   return (
-    <div className="flex flex-1 max-h-[150px] max-w-[300px]">
-      <Image priority src={img} alt="" width={300} height={150} />
+    <div className="flex flex-1 max-h-[150px]">
+      <Image priority src={img} alt="" width={300} height={150}/>
     </div>
   );
 }
@@ -35,8 +35,8 @@ function ImageComponent({ img }: any) {
 function Info({ name, population, region, capital }: InfoProps) {
   return (
     <div className="p-8">
-      <h1 className="text-2xl mb-6 font-semibold">{name}</h1>
-      <div className="flex flex-col gap-3">
+      <h1 className="text-2xl mb-6 font-semibold whitespace-nowrap overflow-hidden text-ellipsis max-w-[100px] fold:max-w-full">{name}</h1>
+      <div className="flex flex-1 flex-col gap-3">
         <TextInfo label="Population" value={population} />
         <TextInfo label="Capital" value={capital} />
         <TextInfo label="Region" value={region} />
@@ -47,7 +47,7 @@ function Info({ name, population, region, capital }: InfoProps) {
 
 function Group({ children }: any) {
   return (
-    <div className="flex flex-col flex-1 md:grid md:grid-cols-2 xl:grid-cols-4 gap-24">
+    <div className="flex flex-col flex-1 sm:mx-auto md:grid md:grid-cols-2 xl:grid-cols-4 gap-24">
       {children}
     </div>
   );
