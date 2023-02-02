@@ -47,7 +47,7 @@ function Info({ name, population, region, capital }: InfoProps) {
 
 function Group({ children }: any) {
   return (
-    <div className="flex flex-col flex-1 sm:mx-auto md:grid md:grid-cols-2 xl:grid-cols-4 gap-24">
+    <div className="flex flex-col flex-1 sm:mx-auto md:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-24">
       {children}
     </div>
   );
