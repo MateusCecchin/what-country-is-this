@@ -26,7 +26,7 @@ function Root({ children, ...rest }: RootProps) {
 
 function ImageComponent({ img }: any) {
   return (
-    <div className="flex flex-1">
+    <div className="flex flex-1 min-w-[300px]">
       <Image priority src={img} alt="Imagem do pais" width={1} height={1} className="h-[150px] w-full object-cover group-hover:opacity-70"/>
     </div>
   );
