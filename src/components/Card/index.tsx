@@ -26,8 +26,8 @@ function Root({ children, ...rest }: RootProps) {
 
 function ImageComponent({ img }: any) {
   return (
-    <div className="flex flex-1 max-h-[150px]">
-      <Image priority src={img} alt="" width={300} height={150}/>
+    <div className="flex flex-1">
+      <Image priority src={img} alt="Imagem do pais" width={1} height={1}  style={{ height: '150px', width: "100%", objectFit: "cover" }}/>
     </div>
   );
 }

@@ -27,7 +27,7 @@ export default function Name() {
             src={countrie.flags.svg}
             width={500}
             height={300}
-            alt=""
+            alt="Imagem do pais"
           />
         </div>
         <div className="flex lg:flex-1 flex-col justify-center self-start lg:self-center gap-4">

@@ -6,7 +6,6 @@ import { useCountries } from "../contexts/countries";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 import CountriesApi, { Countries } from "../services/CountriesApi";
 import { Loading } from "../components/Loading";
-import { ToastContainer } from "react-toastify";
 import { useQuery } from "react-query";
 
 export default function Home() {
