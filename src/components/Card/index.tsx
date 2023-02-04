@@ -16,7 +16,7 @@ interface InfoProps {
 function Root({ children, ...rest }: RootProps) {
   return (
     <Link
-      className="sm:min-w-[300px] sm:min-h-[400px] max-w-[300px] max-h-[400px] mx-auto bg-slate-700 rounded-lg shadow-2xl  overflow-hidden group hover:bg-slate-600 hover:cursor-pointer  hover:-scale-[-1.05] hover:duration-300"
+      className="sm:min-w-[300px] sm:min-h-[400px] max-w-[300px] max-h-[400px] mx-auto bg-slate-700 rounded-lg shadow-2xl  overflow-hidden group hover:bg-slate-600 hover:cursor-pointer hover:-scale-[-1.05]  hover:after:scale-[1] duration-300"
       {...rest}
     >
       {children}

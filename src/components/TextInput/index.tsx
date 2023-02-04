@@ -14,7 +14,7 @@ function Root({ children }: any) {
 }
 
 function Input({ ...rest }: HTMLAttributes<HTMLInputElement>) {
-  return <input className="bg-transparent w-full outline-none" {...rest} />;
+  return <input type="text" className="bg-transparent w-full outline-none " {...rest} />;
 }
 
 function TextInputComponent({
