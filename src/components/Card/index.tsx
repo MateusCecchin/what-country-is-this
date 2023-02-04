@@ -16,7 +16,7 @@ interface InfoProps {
 function Root({ children, ...rest }: RootProps) {
   return (
     <Link
-      className="sm:min-w-[300px] sm:min-h-[400px] max-w-[300px] max-h-[400px] mx-auto bg-slate-700 rounded-lg shadow-2xl hover:bg-slate-600 hover:cursor-pointer overflow-hidden"
+      className="sm:min-w-[300px] sm:min-h-[400px] max-w-[300px] max-h-[400px] mx-auto bg-slate-700 rounded-lg shadow-2xl  overflow-hidden group hover:bg-slate-600 hover:cursor-pointer  hover:-scale-[-1.05] hover:duration-300"
       {...rest}
     >
       {children}
@@ -27,7 +27,7 @@ function Root({ children, ...rest }: RootProps) {
 function ImageComponent({ img }: any) {
   return (
     <div className="flex flex-1">
-      <Image priority src={img} alt="Imagem do pais" width={1} height={1}  style={{ height: '150px', width: "100%", objectFit: "cover" }}/>
+      <Image priority src={img} alt="Imagem do pais" width={1} height={1} className="h-[150px] w-full object-cover group-hover:opacity-70"/>
     </div>
   );
 }
